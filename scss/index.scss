@@ -1,0 +1,218 @@
+@use "presets";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+}
+
+body {
+    @include presets.text-preset-4;
+    color: presets.$slate-600;
+    background-color: presets.$white;
+    text-align: center;
+}
+
+h1, h2 {
+    color: presets.$slate-900;
+}
+
+h1 {
+    @include presets.text-preset-1;
+}
+
+h2 {
+    @include presets.text-preset-2;
+}
+
+.subtitle {
+    @include presets.text-preset-3;
+    text-transform: uppercase;
+}
+
+%button {
+    @include presets.text-preset-5;
+    display: block;
+    width: fit-content;
+    padding-inline: presets.$spacing-500;
+    padding-block: presets.$spacing-200;
+    border-radius: 1.8125rem;
+    text-decoration: none;
+    color: presets.$white;
+    transition: all 800ms;
+}
+
+.button-blue {
+    @extend %button;
+    background-color: presets.$cyan-600;
+
+    .version-number {
+        color: presets.$cyan-300;
+    }
+
+    &:hover {
+        background-color: presets.$cyan-400;
+    }
+}
+
+.button-purple {
+    @extend %button;
+    background-color: presets.$purple-600;
+
+    .version-number {
+        color: presets.$purple-300;
+    }
+
+    &:hover {
+        background-color: presets.$purple-400;
+    }
+}
+
+.number {
+    position: relative;
+    z-index: 999;
+}
+
+.number-line {
+    width: 0.0625rem;
+    height: 5rem;
+    background-color: presets.$slate-300;
+    margin: auto;
+}
+
+.number-content{
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 0.0625rem solid presets.$slate-300;
+    border-radius: 50%;
+    background-color: presets.$white;
+    @include presets.text-preset-5;
+    color: presets.$slate-600;
+    background-color: presets.$white;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav {
+    padding-inline: presets.$spacing-1000;
+    padding-block-start: presets.$spacing-600;
+}
+
+.logo {
+    margin-inline: auto;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: presets.$spacing-600;
+    column-gap: presets.$spacing-200;
+    padding-block-start: presets.$spacing-800;
+    padding-block-end: presets.$spacing-400;
+}
+
+.hero-image-left, .hero-image-right {
+    height: 10rem;
+    width: 100%;
+}
+
+.hero-image-left {
+    background-image: url("../assets/desktop/image-hero-left.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: right;
+}
+
+.hero-image-right {
+    background-image: url("../assets/desktop/image-hero-right.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: left;
+}
+
+.hero-content {
+    grid-column: auto / span 2;
+    display: flex;
+    flex-direction: column;
+    gap: presets.$spacing-300;
+    padding-inline: presets.$spacing-400;
+    max-width: presets.$page-content-mobile-width;
+    justify-self: center;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: presets.$spacing-200;
+    align-items: center;
+}
+
+.main-content {
+    padding-inline: presets.$spacing-400;
+    padding-block-start: presets.$spacing-400;
+    padding-block-end: presets.$spacing-800;
+    display: flex;
+    flex-direction: column;
+    gap: presets.$spacing-800;
+    max-width: presets.$page-content-mobile-width;
+    margin-inline: auto;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    gap: presets.$spacing-400;
+}
+
+.text-content-title {
+    display: flex;
+    flex-direction: column;
+    gap: presets.$spacing-200;
+}
+
+.image-collage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: presets.$spacing-200;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+    }
+}
+
+.footer-container {
+    margin-block-start: -1.75rem;
+    padding-inline: presets.$spacing-400;
+    padding-block: presets.$spacing-800;
+    background-image: linear-gradient(to right, presets.$cyan-600-transparent, presets.$cyan-600-transparent), url("../assets/desktop/image-footer.jpg");
+    background-position: center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+
+.footer-content {
+    max-width: presets.$page-content-mobile-width;
+    display: flex;
+    flex-direction: column;
+    gap: presets.$spacing-300;
+    margin-inline: auto;
+    align-items: center;
+
+    color: presets.$white;
+
+    h2 {
+        color: presets.$white;
+    }
+}
+
+.attribution {
+    font-size: 0.75rem;
+}

@@ -1,0 +1,111 @@
+// Colors
+
+$cyan-600: hsl(192, 37%, 48%);
+$cyan-600-transparent: hsla(192, 37%, 48%, 0.9);
+$cyan-400: hsl(192, 54%, 64%);
+$cyan-300: hsl(192, 90%, 77%);
+$purple-600: hsl(268, 34%, 53%);
+$purple-400: hsl(268, 55%, 71%);
+$purple-300: hsl(268, 100%, 86%);
+$slate-900: hsl(240, 21%, 20%);
+$slate-600: hsl(240, 10%, 57%);
+$slate-300: hsl(240, 18%, 85%);
+$white: hsl(0, 0%, 98%);
+
+// Spacing
+
+$spacing-1400: 7rem;
+$spacing-1000: 5rem;
+$spacing-900: 4.5rem;
+$spacing-800: 4rem;
+$spacing-700: 3.5rem;
+$spacing-600: 3rem;
+$spacing-500: 2.5rem;
+$spacing-400: 2rem;
+$spacing-300: 1.5rem;
+$spacing-200: 1rem;
+$spacing-100: 0.5rem;
+$spacing-50: 0.25rem;
+
+// Page Content Width
+
+$page-content-mobile-width: 23.4375rem;
+
+// Screen Type Variables
+
+$screen-type-mobile: "mobile";
+$screen-type-tablet: "tablet";
+$screen-type-desktop: "desktop";
+
+// Typography
+
+@mixin _red-hat-display-black {
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+@mixin _red-hat-display-medium {
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@mixin text-preset-1($screen-type: $screen-type-mobile) {
+    @include _red-hat-display-black;
+    @if $screen-type == $screen-type-desktop {
+        font-size: 4rem;
+    } @else if $screen-type == $screen-type-tablet {
+        font-size: 3rem;
+    } @else {
+        font-size: 2.5rem;
+    }
+    line-height: 110%;
+    letter-spacing: 0;
+}
+
+@mixin text-preset-2($screen-type: $screen-type-mobile) {
+    @include _red-hat-display-black;
+    @if $screen-type == $screen-type-desktop {
+        font-size: 2.5rem;
+    } @else if $screen-type == $screen-type-tablet {
+        font-size: 2.25rem;
+    } @else {
+        font-size: 2rem;
+    }
+    line-height: 110%;
+    letter-spacing: 0;
+}
+
+@mixin text-preset-3($screen-type: $screen-type-mobile) {
+    @include _red-hat-display-black;
+    @if $screen-type == $screen-type-desktop {
+        font-size: 1rem;
+    } @else if $screen-type == $screen-type-tablet {
+        font-size: 0.875rem;
+    } @else {
+        font-size: 0.75rem;
+    }
+    line-height: 110%;
+    letter-spacing: 0.25rem;
+}
+
+@mixin text-preset-4($screen-type: $screen-type-mobile) {
+    @include _red-hat-display-medium;
+    @if $screen-type == $screen-type-desktop {
+        font-size: 1.125rem;
+    } @else {
+        font-size: 1rem;
+    }
+    line-height: 150%;
+    letter-spacing: 0;
+}
+
+@mixin text-preset-5($screen-type: $screen-type-mobile) {
+    @include _red-hat-display-black;
+    font-size: 1rem;
+    line-height: 150%;
+    letter-spacing: 0;
+}
