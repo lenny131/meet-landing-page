@@ -15,10 +15,12 @@ body {
     color: presets.$slate-600;
     background-color: presets.$white;
     text-align: center;
+    text-wrap: pretty;
 }
 
 h1, h2 {
     color: presets.$slate-900;
+    text-wrap: balance;
 }
 
 h1 {
@@ -159,9 +161,17 @@ h2 {
     padding-block-end: presets.$spacing-800;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: presets.$spacing-800;
-    max-width: presets.$page-content-mobile-width;
     margin-inline: auto;
+}
+
+.image-collage {
+    max-width: presets.$page-content-mobile-width;
+}
+
+.text-content {
+    max-width: presets.$page-content-mobile-width;
 }
 
 .text-content {
@@ -194,7 +204,7 @@ h2 {
     padding-block: presets.$spacing-800;
     background-image: linear-gradient(to right, presets.$cyan-600-transparent, presets.$cyan-600-transparent), url("../assets/desktop/image-footer.jpg");
     background-position: center;
-    background-size: auto 100%;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -215,4 +225,78 @@ h2 {
 
 .attribution {
     font-size: 0.75rem;
+}
+
+@media (min-width: 48rem) {
+    body {
+        @include presets.text-preset-4(presets.$screen-type-tablet);
+    }
+    
+    h1 {
+        @include presets.text-preset-1(presets.$screen-type-tablet);
+    }
+    
+    h2 {
+        @include presets.text-preset-2(presets.$screen-type-tablet);
+    }
+    
+    .subtitle {
+        @include presets.text-preset-3(presets.$screen-type-tablet);
+    }
+    
+    %button {
+        @include presets.text-preset-5(presets.$screen-type-tablet);
+    }
+    
+    .button-blue {
+        @extend %button;
+    }
+    
+    .button-purple {
+        @extend %button;
+    }
+    
+    .number-content{
+       @include presets.text-preset-5(presets.$screen-type-tablet);
+    }
+    
+    .hero {
+        row-gap: presets.$spacing-900;
+        column-gap: presets.$spacing-400;
+    }
+    
+    .hero-image-left, .hero-image-right {
+        height: 18.9375rem;
+    }
+    
+    .hero-content {
+        gap: presets.$spacing-300;
+        max-width: presets.$page-content-tablet-width;
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .main-content {
+        padding-block-start: presets.$spacing-700;
+    }
+
+    .image-collage {
+        max-width: 48rem;
+    }
+    
+    .text-content {
+        max-width: presets.$page-content-tablet-width;
+    }
+    
+    .image-collage {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: presets.$spacing-300;
+    }
+    
+    .footer-content {
+        max-width: presets.$page-content-tablet-width;
+    }
 }

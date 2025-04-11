@@ -19,10 +19,12 @@ body {
   color: hsl(240, 10%, 57%);
   background-color: hsl(0, 0%, 98%);
   text-align: center;
+  text-wrap: pretty;
 }
 
 h1, h2 {
   color: hsl(240, 21%, 20%);
+  text-wrap: balance;
 }
 
 h1 {
@@ -187,9 +189,17 @@ h2 {
   padding-block-end: 4rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 4rem;
-  max-width: 23.4375rem;
   margin-inline: auto;
+}
+
+.image-collage {
+  max-width: 23.4375rem;
+}
+
+.text-content {
+  max-width: 23.4375rem;
 }
 
 .text-content {
@@ -221,7 +231,7 @@ h2 {
   padding-block: 4rem;
   background-image: linear-gradient(to right, hsla(192, 37%, 48%, 0.9), hsla(192, 37%, 48%, 0.9)), url("../assets/desktop/image-footer.jpg");
   background-position: center;
-  background-size: auto 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -240,6 +250,94 @@ h2 {
 
 .attribution {
   font-size: 0.75rem;
+}
+
+@media (min-width: 48rem) {
+  body {
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 150%;
+    letter-spacing: 0;
+  }
+  h1 {
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 3rem;
+    line-height: 110%;
+    letter-spacing: 0;
+  }
+  h2 {
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 2.25rem;
+    line-height: 110%;
+    letter-spacing: 0;
+  }
+  .subtitle {
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 0.875rem;
+    line-height: 110%;
+    letter-spacing: 0.25rem;
+  }
+  .button-blue, .button-purple {
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 150%;
+    letter-spacing: 0;
+  }
+  .number-content {
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 150%;
+    letter-spacing: 0;
+  }
+  .hero {
+    row-gap: 4.5rem;
+    column-gap: 2rem;
+  }
+  .hero-image-left, .hero-image-right {
+    height: 18.9375rem;
+  }
+  .hero-content {
+    gap: 1.5rem;
+    max-width: 31.5rem;
+  }
+  .hero-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .main-content {
+    padding-block-start: 3.5rem;
+  }
+  .image-collage {
+    max-width: 48rem;
+  }
+  .text-content {
+    max-width: 31.5rem;
+  }
+  .image-collage {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .footer-content {
+    max-width: 31.5rem;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
