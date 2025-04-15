@@ -112,7 +112,8 @@ h2 {
 
 .hero {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template: "hero-image-left hero-image-right" 
+                    "hero-content hero-content" / 1fr 1fr;
     row-gap: presets.$spacing-600;
     column-gap: presets.$spacing-200;
     padding-block-start: presets.$spacing-800;
@@ -129,6 +130,7 @@ h2 {
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: right;
+    grid-area: hero-image-left;
 }
 
 .hero-image-right {
@@ -136,16 +138,17 @@ h2 {
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: left;
+    grid-area: hero-image-right;
 }
 
 .hero-content {
-    grid-column: auto / span 2;
     display: flex;
     flex-direction: column;
     gap: presets.$spacing-300;
     padding-inline: presets.$spacing-400;
     max-width: presets.$page-content-mobile-width;
     justify-self: center;
+    grid-area: hero-content;
 }
 
 .hero-buttons {
@@ -244,16 +247,16 @@ h2 {
         @include presets.text-preset-3(presets.$screen-type-tablet);
     }
     
-    %button {
+    %button-tablet {
         @include presets.text-preset-5(presets.$screen-type-tablet);
     }
     
     .button-blue {
-        @extend %button;
+        @extend %button-tablet;
     }
     
     .button-purple {
-        @extend %button;
+        @extend %button-tablet;
     }
     
     .number-content{
@@ -285,18 +288,104 @@ h2 {
 
     .image-collage {
         max-width: 48rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: presets.$spacing-300;
     }
     
     .text-content {
         max-width: presets.$page-content-tablet-width;
     }
     
-    .image-collage {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: presets.$spacing-300;
-    }
-    
     .footer-content {
         max-width: presets.$page-content-tablet-width;
     }
+}
+
+@media (min-width: 90rem) {
+    body {
+        @include presets.text-preset-4(presets.$screen-type-desktop);
+    }
+    
+    h1 {
+        @include presets.text-preset-1(presets.$screen-type-desktop);
+    }
+    
+    h2 {
+        @include presets.text-preset-2(presets.$screen-type-desktop);
+    }
+    
+    .subtitle {
+        @include presets.text-preset-3(presets.$screen-type-desktop);
+    }
+    
+    %button-desktop {
+        @include presets.text-preset-5(presets.$screen-type-desktop);
+    }
+    
+    .button-blue {
+        @extend %button-desktop;
+    }
+    
+    .button-purple {
+        @extend %button-desktop;
+    }
+    
+    .number-content{
+       @include presets.text-preset-5(presets.$screen-type-desktop);
+    }
+    
+    .hero {
+        padding-block: presets.$spacing-800;
+        grid-template: "hero-image-left hero-content hero-image-right" / 1fr 28.01875rem 1fr;
+        column-gap: presets.$spacing-1400;
+        min-height: 30.5rem;
+    }
+    
+    .hero-content {
+        grid-area: hero-content;
+        padding-inline: 0;
+    }
+
+    .hero-image-right {
+        align-self: flex-end;
+    }
+    
+    .main-content {
+        padding-block-end: presets.$spacing-900;
+    }
+
+    .image-collage {
+        max-width: 70rem;
+        gap: presets.$spacing-400;
+    }
+    
+    .text-content {
+        max-width: 34rem;
+    }
+
+    .footer-container {
+        padding-inline: presets.$spacing-1000;
+        padding-block: presets.$spacing-1400;
+    }
+    
+    .footer-content {
+        max-width: 70rem;
+        display: grid;
+        grid-template-columns: 1fr 22.1875rem 16rem;
+        gap: presets.$spacing-400;
+
+        & > h2 {
+            text-align: left;
+        }
+
+        & > p {
+            text-align: left;
+        }
+
+        & > a {
+            justify-self: end;
+        }
+    }
+
+
 }
