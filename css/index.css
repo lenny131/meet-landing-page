@@ -21,6 +21,11 @@ body {
   text-align: center;
   text-wrap: pretty;
 }
+@media (min-width: 90em) {
+  body {
+    font-size: 1.125rem;
+  }
+}
 
 h1, h2 {
   color: hsl(240, 21%, 20%);
@@ -36,6 +41,16 @@ h1 {
   line-height: 110%;
   letter-spacing: 0;
 }
+@media (min-width: 48em) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 90em) {
+  h1 {
+    font-size: 4rem;
+  }
+}
 
 h2 {
   font-family: "Red Hat Display", sans-serif;
@@ -45,6 +60,16 @@ h2 {
   font-size: 2rem;
   line-height: 110%;
   letter-spacing: 0;
+}
+@media (min-width: 48em) {
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 90em) {
+  h2 {
+    font-size: 2.5rem;
+  }
 }
 
 .subtitle {
@@ -56,6 +81,16 @@ h2 {
   line-height: 110%;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
+}
+@media (min-width: 48em) {
+  .subtitle {
+    font-size: 0.875rem;
+  }
+}
+@media (min-width: 90em) {
+  .subtitle {
+    font-size: 1rem;
+  }
 }
 
 .button-purple, .button-blue {
@@ -254,61 +289,7 @@ h2 {
   font-size: 0.75rem;
 }
 
-@media (min-width: 48rem) {
-  body {
-    font-family: "Red Hat Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 1rem;
-    line-height: 150%;
-    letter-spacing: 0;
-  }
-  h1 {
-    font-family: "Red Hat Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 3rem;
-    line-height: 110%;
-    letter-spacing: 0;
-  }
-  h2 {
-    font-family: "Red Hat Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 2.25rem;
-    line-height: 110%;
-    letter-spacing: 0;
-  }
-  .subtitle {
-    font-family: "Red Hat Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 0.875rem;
-    line-height: 110%;
-    letter-spacing: 0.25rem;
-  }
-  .button-purple, .button-blue {
-    font-family: "Red Hat Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 1rem;
-    line-height: 150%;
-    letter-spacing: 0;
-  }
-  .number-content {
-    font-family: "Red Hat Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 1rem;
-    line-height: 150%;
-    letter-spacing: 0;
-  }
+@media (min-width: 48em) {
   .hero {
     row-gap: 4.5rem;
     column-gap: 2rem;
@@ -339,61 +320,7 @@ h2 {
     max-width: 31.5rem;
   }
 }
-@media (min-width: 90rem) {
-  body {
-    font-family: "Red Hat Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 1.125rem;
-    line-height: 150%;
-    letter-spacing: 0;
-  }
-  h1 {
-    font-family: "Red Hat Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 4rem;
-    line-height: 110%;
-    letter-spacing: 0;
-  }
-  h2 {
-    font-family: "Red Hat Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 2.5rem;
-    line-height: 110%;
-    letter-spacing: 0;
-  }
-  .subtitle {
-    font-family: "Red Hat Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 1rem;
-    line-height: 110%;
-    letter-spacing: 0.25rem;
-  }
-  .button-purple, .button-blue {
-    font-family: "Red Hat Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 1rem;
-    line-height: 150%;
-    letter-spacing: 0;
-  }
-  .number-content {
-    font-family: "Red Hat Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 1rem;
-    line-height: 150%;
-    letter-spacing: 0;
-  }
+@media (min-width: 90em) {
   .hero {
     padding-block: 4rem;
     grid-template: "hero-image-left hero-content hero-image-right"/1fr 28.01875rem 1fr;
@@ -428,10 +355,10 @@ h2 {
     gap: 2rem;
   }
   .footer-content > h2 {
-    text-align: left;
+    text-align: start;
   }
   .footer-content > p {
-    text-align: left;
+    text-align: start;
   }
   .footer-content > a {
     justify-self: end;

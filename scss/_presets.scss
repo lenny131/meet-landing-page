@@ -14,7 +14,6 @@ $white: hsl(0, 0%, 98%);
 
 // Spacing
 
-$spacing-1600: 8rem;
 $spacing-1400: 7rem;
 $spacing-1000: 5rem;
 $spacing-900: 4.5rem;
@@ -28,16 +27,15 @@ $spacing-200: 1rem;
 $spacing-100: 0.5rem;
 $spacing-50: 0.25rem;
 
+// Screen size breakpoints
+
+$tablet-min-width: 48em;
+$desktop-min-width: 90em;
+
 // Page Content Width
 
 $page-content-mobile-width: 23.4375rem;
 $page-content-tablet-width: 31.5rem;
-
-// Screen Type Variables
-
-$screen-type-mobile: "mobile";
-$screen-type-tablet: "tablet";
-$screen-type-desktop: "desktop";
 
 // Typography
 
@@ -55,57 +53,60 @@ $screen-type-desktop: "desktop";
     font-style: normal;
 }
 
-@mixin text-preset-1($screen-type: $screen-type-mobile) {
+@mixin text-preset-1 {
     @include _red-hat-display-black;
-    @if $screen-type == $screen-type-desktop {
-        font-size: 4rem;
-    } @else if $screen-type == $screen-type-tablet {
+    font-size: 2.5rem;
+    line-height: 110%;
+    letter-spacing: 0;
+
+    @media (min-width: $tablet-min-width) {
         font-size: 3rem;
-    } @else {
-        font-size: 2.5rem;
     }
-    line-height: 110%;
-    letter-spacing: 0;
+    @media (min-width: $desktop-min-width) {
+        font-size: 4rem;
+    }
 }
 
-@mixin text-preset-2($screen-type: $screen-type-mobile) {
+@mixin text-preset-2 {
     @include _red-hat-display-black;
-    @if $screen-type == $screen-type-desktop {
-        font-size: 2.5rem;
-    } @else if $screen-type == $screen-type-tablet {
+    font-size: 2rem;
+    line-height: 110%;
+    letter-spacing: 0;
+
+    @media (min-width: $tablet-min-width) {
         font-size: 2.25rem;
-    } @else {
-        font-size: 2rem;
     }
-    line-height: 110%;
-    letter-spacing: 0;
+    @media (min-width: $desktop-min-width) {
+        font-size: 2.5rem;
+    }
 }
 
-@mixin text-preset-3($screen-type: $screen-type-mobile) {
+@mixin text-preset-3 {
     @include _red-hat-display-black;
-    @if $screen-type == $screen-type-desktop {
-        font-size: 1rem;
-    } @else if $screen-type == $screen-type-tablet {
-        font-size: 0.875rem;
-    } @else {
-        font-size: 0.75rem;
-    }
+    font-size: 0.75rem;
     line-height: 110%;
     letter-spacing: 0.25rem;
-}
 
-@mixin text-preset-4($screen-type: $screen-type-mobile) {
-    @include _red-hat-display-medium;
-    @if $screen-type == $screen-type-desktop {
-        font-size: 1.125rem;
-    } @else {
+    @media (min-width: $tablet-min-width) {
+        font-size: 0.875rem;
+    }
+    @media (min-width: $desktop-min-width) {
         font-size: 1rem;
     }
-    line-height: 150%;
-    letter-spacing: 0;
 }
 
-@mixin text-preset-5($screen-type: $screen-type-mobile) {
+@mixin text-preset-4 {
+    @include _red-hat-display-medium;
+    font-size: 1rem;
+    line-height: 150%;
+    letter-spacing: 0;
+
+    @media (min-width: $desktop-min-width) {
+        font-size: 1.125rem;
+    }
+}
+
+@mixin text-preset-5 {
     @include _red-hat-display-black;
     font-size: 1rem;
     line-height: 150%;

@@ -7,7 +7,7 @@
             "group":"build",
             "label": "Sass",
             "type": "shell",
-            "command": "sass scss:css"
+            "command": "sass --quiet scss:css"
         }
     ]
 }

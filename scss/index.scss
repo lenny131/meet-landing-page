@@ -230,39 +230,7 @@ h2 {
     font-size: 0.75rem;
 }
 
-@media (min-width: 48rem) {
-    body {
-        @include presets.text-preset-4(presets.$screen-type-tablet);
-    }
-    
-    h1 {
-        @include presets.text-preset-1(presets.$screen-type-tablet);
-    }
-    
-    h2 {
-        @include presets.text-preset-2(presets.$screen-type-tablet);
-    }
-    
-    .subtitle {
-        @include presets.text-preset-3(presets.$screen-type-tablet);
-    }
-    
-    %button-tablet {
-        @include presets.text-preset-5(presets.$screen-type-tablet);
-    }
-    
-    .button-blue {
-        @extend %button-tablet;
-    }
-    
-    .button-purple {
-        @extend %button-tablet;
-    }
-    
-    .number-content{
-       @include presets.text-preset-5(presets.$screen-type-tablet);
-    }
-    
+@media (min-width: presets.$tablet-min-width) {
     .hero {
         row-gap: presets.$spacing-900;
         column-gap: presets.$spacing-400;
@@ -301,39 +269,7 @@ h2 {
     }
 }
 
-@media (min-width: 90rem) {
-    body {
-        @include presets.text-preset-4(presets.$screen-type-desktop);
-    }
-    
-    h1 {
-        @include presets.text-preset-1(presets.$screen-type-desktop);
-    }
-    
-    h2 {
-        @include presets.text-preset-2(presets.$screen-type-desktop);
-    }
-    
-    .subtitle {
-        @include presets.text-preset-3(presets.$screen-type-desktop);
-    }
-    
-    %button-desktop {
-        @include presets.text-preset-5(presets.$screen-type-desktop);
-    }
-    
-    .button-blue {
-        @extend %button-desktop;
-    }
-    
-    .button-purple {
-        @extend %button-desktop;
-    }
-    
-    .number-content{
-       @include presets.text-preset-5(presets.$screen-type-desktop);
-    }
-    
+@media (min-width: presets.$desktop-min-width) {
     .hero {
         padding-block: presets.$spacing-800;
         grid-template: "hero-image-left hero-content hero-image-right" / 1fr 28.01875rem 1fr;
@@ -375,11 +311,11 @@ h2 {
         gap: presets.$spacing-400;
 
         & > h2 {
-            text-align: left;
+            text-align: start;
         }
 
         & > p {
-            text-align: left;
+            text-align: start;
         }
 
         & > a {
